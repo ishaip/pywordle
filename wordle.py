@@ -167,7 +167,7 @@ def print_colored_letters( letter:str, misses:List[str], hits:List[str]) ->None:
          print("  \033[91m {}\033[00m" .format(letter),end ="")
     # print the hits in yellow
     elif letter in hits:
-        print("  \033[92m {}\033[00m" .format(letter),end ="")
+        print("  \033[93m {}\033[00m" .format(letter),end ="")
 
     # letter hasn't been gussed so well use the defult color
     else: print("   " + letter,end ="")
