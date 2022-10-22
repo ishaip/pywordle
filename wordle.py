@@ -172,8 +172,6 @@ def print_colored_letters( letter:str, misses:List[str], hits:List[str]) ->None:
     else: print("   " + letter,end ="")
 
 
-
-
 def play_wordle(filepath:str, char_min:int=4, char_max:int=None, max_guesses:int=6, debug:bool=False):
     """Play a game of wordle.
 
@@ -241,11 +239,7 @@ def play_wordle(filepath:str, char_min:int=4, char_max:int=None, max_guesses:int
                 for letter in key_board_letters[row_num]:
                     print_colored_letters(letter, misses, hits) 
                 print("\n\n", end ="")
-
-
             print(f"{max_guesses-n_guess} guesses left!\n")
-
-            # everything should be added here !!!
 
     # loss state
     if not check:
