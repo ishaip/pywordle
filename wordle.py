@@ -141,6 +141,7 @@ def inspect_guess(guess:str, secret_word:str, misses:List[str]=None, hits:List[s
         if val[0] == val[1]:
             # right char, right position -> green square
             positions.append((val[0], "\U0001F7E9"))
+            hits.append(val[0])
 
         elif val[0] in secret_word_split:
             # right char, wrong position -> yellow square
@@ -166,7 +167,7 @@ def print_colored_letters( letter:str, misses:List[str], hits:List[str]) ->None:
          print("  \033[91m {}\033[00m" .format(letter),end ="")
     # print the hits in yellow
     elif letter in hits:
-        print("  \033[93m {}\033[00m" .format(letter),end ="")
+        print("  \033[92m {}\033[00m" .format(letter),end ="")
 
     # letter hasn't been gussed so well use the defult color
     else: print("   " + letter,end ="")
