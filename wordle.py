@@ -231,12 +231,12 @@ def play_wordle(filepath:str, char_min:int=4, char_max:int=None, max_guesses:int
             break
         else:
             n_guess += 1
-            #print(f"Incorrect characters: {' '.join(misses)}" + "\n")  
-            
 
-
+            # creating all the leeter in the same order as they appear on the keyboard seprated by rows
             key_board_letters = [['Q','W','E','R','T','Y','U','I','O','P'],['A','S','D','F','G','H','J','K','L'],['Z','X','C','V','B','N','M']]
             for row_num in range(0,3):
+
+                # printing spaces in order to match the way the keyboard rows are skewed 
                 print(" " * row_num, end="")
                 for letter in key_board_letters[row_num]:
                     print_colored_letters(letter, misses, hits) 
