@@ -117,7 +117,7 @@ def inspect_guess(guess:str, secret_word:str, misses:List[str]=None, hits:List[s
         Tuple[List[Tuple[str,str]], List[str]]: 
             0: tuples of each char in guess and unicode result
             1: list of characters that are not in secret word that user guessed
-            2: list of charcterss that are in the secret word that the user gussed
+            2: list of characters that are in the secret word that the user guessed
 
     """
     # first split the guess and secret word into list of characters
@@ -159,14 +159,16 @@ def inspect_guess(guess:str, secret_word:str, misses:List[str]=None, hits:List[s
 
     return positions, sorted(set(misses)) , sorted(set(hits))
 
-# pint the letter with a color to match if it's a hit or miss
-def print_colored_letters( letter:str, misses:List[str], hits:List[str]) ->None:
 
-    # print the misses in red
+def print_colored_letters( letter:str, misses:List[str], hits:List[str]) -> None:
+    """print the letter with a color to match if it's a hit or miss"""
+
     if letter in misses:
-         print("  \033[91m {}\033[00m" .format(letter),end ="")
-    # print the hits in yellow
+        # print the misses in red
+        print("  \033[91m {}\033[00m" .format(letter),end ="")
+    
     elif letter in hits:
+        # print the hits in yellow
         print("  \033[93m {}\033[00m" .format(letter),end ="")
 
     # letter hasn't been gussed so well use the defult color
